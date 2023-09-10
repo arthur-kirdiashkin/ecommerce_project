@@ -2,11 +2,11 @@ import 'package:equatable/equatable.dart';
 
 class PhoneEntity extends Equatable {
   final int? id;
-  final String title;
-  final String subTitle;
-  final String picture;
-  final bool isBuy;
-  final bool isNew;
+  final String? title;
+  final String? subTitle;
+  final String? picture;
+  final bool? isBuy;
+  final bool? isNew;
 
   const PhoneEntity({
     required this.id,

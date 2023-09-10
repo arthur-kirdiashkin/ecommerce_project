@@ -4,8 +4,8 @@ import 'package:equatable/equatable.dart';
 import '../../data/models/phone_store_model.dart';
 
 class HomeEntity extends Equatable {
-  final BestSellerModel? bestSellers;
-  final PhoneModel? phones;
+  final List<BestSellerModel>? bestSellers;
+  final List<PhoneModel>? phones;
 
   HomeEntity({
     required this.bestSellers,
