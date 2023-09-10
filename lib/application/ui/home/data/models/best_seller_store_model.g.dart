@@ -8,12 +8,12 @@ part of 'best_seller_store_model.dart';
 
 BestSellerModel _$BestSellerModelFromJson(Map<String, dynamic> json) =>
     BestSellerModel(
-      id: json['id'] as int,
-      isFavorites: json['is_favorites'] as bool,
-      title: json['title'] as String,
-      priceWithoutDiscount: json['price_without_discount'] as int,
-      discountPrice: json['discount_price'] as int,
-      picture: json['picture'] as String,
+      id: json['id'] as int?,
+      isFavorites: json['is_favorites'] as bool?,
+      title: json['title'] as String?,
+      priceWithoutDiscount: json['price_without_discount'] as int?,
+      discountPrice: json['discount_price'] as int?,
+      picture: json['picture'] as String?,
     );
 
 Map<String, dynamic> _$BestSellerModelToJson(BestSellerModel instance) =>
