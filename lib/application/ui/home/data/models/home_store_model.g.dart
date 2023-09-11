@@ -8,16 +8,16 @@ part of 'home_store_model.dart';
 
 HomeStoreModel _$HomeStoreModelFromJson(Map<String, dynamic> json) =>
     HomeStoreModel(
-      bestSellers: (json['best_sellers'] as List<dynamic>?)
+      bestSeller: (json['best_seller'] as List<dynamic>?)
           ?.map((e) => BestSellerModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      phones: (json['phones'] as List<dynamic>?)
+      homeStore: (json['home_store'] as List<dynamic>?)
           ?.map((e) => PhoneModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$HomeStoreModelToJson(HomeStoreModel instance) =>
     <String, dynamic>{
-      'best_sellers': instance.bestSellers?.map((e) => e.toJson()).toList(),
-      'phones': instance.phones?.map((e) => e.toJson()).toList(),
+      'best_seller': instance.bestSeller?.map((e) => e.toJson()).toList(),
+      'home_store': instance.homeStore?.map((e) => e.toJson()).toList(),
     };

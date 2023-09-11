@@ -9,12 +9,12 @@ part 'home_store_model.g.dart';
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class HomeStoreModel extends HomeEntity {
   HomeStoreModel({
-    required super.bestSellers,
-    required super.phones,
+    required super.bestSeller,
+    required super.homeStore,
   });
 
 
-  factory HomeStoreModel.fromJson(Map <String, dynamic> json) => _$HomeStoreModelFromJson(json);
+  // factory HomeStoreModel.fromJson(Map <String, dynamic> json) => _$HomeStoreModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$HomeStoreModelToJson(this);
+  // Map<String, dynamic> toJson() => _$HomeStoreModelToJson(this);
 }
