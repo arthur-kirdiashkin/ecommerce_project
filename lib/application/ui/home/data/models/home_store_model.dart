@@ -12,4 +12,9 @@ class HomeStoreModel extends HomeEntity {
     required super.bestSellers,
     required super.phones,
   });
+
+
+  factory HomeStoreModel.fromJson(Map <String, dynamic> json) => _$HomeStoreModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$HomeStoreModelToJson(this);
 }
