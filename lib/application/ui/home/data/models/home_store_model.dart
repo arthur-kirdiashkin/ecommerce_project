@@ -14,7 +14,7 @@ class HomeStoreModel extends HomeEntity {
   });
 
 
-  // factory HomeStoreModel.fromJson(Map <String, dynamic> json) => _$HomeStoreModelFromJson(json);
+  factory HomeStoreModel.fromJson(Map <String, dynamic> json) => _$HomeStoreModelFromJson(json);
 
-  // Map<String, dynamic> toJson() => _$HomeStoreModelToJson(this);
+  Map<String, dynamic> toJson() => _$HomeStoreModelToJson(this);
 }
