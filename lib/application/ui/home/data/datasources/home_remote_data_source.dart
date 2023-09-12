@@ -5,30 +5,30 @@ import 'package:ecommerce_project/application/ui/home/data/models/home_store_mod
 import 'package:ecommerce_project/application/ui/home/data/models/phone_store_model.dart';
 import 'package:http/http.dart' as http;
 
-abstract class PhoneRemoteDataSource {
+abstract class HomeRemoteDataSource {
   Future<List<HomeStoreModel>> getPhones();
   Future<List<HomeStoreModel>> getBestSeller();
   Future<List<HomeStoreModel>> getHomeStore();
 }
 
-class PhoneRemoteDataSourceImpl implements PhoneRemoteDataSource {
+class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   final http.Client client;
-  PhoneRemoteDataSourceImpl({required this.client});
+  HomeRemoteDataSourceImpl({required this.client});
 
   @override
-  Future<List<HomeStoreModel>> getPhones() => _getHomeFromUrl('https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175');
+  Future<List<HomeStoreModel>> getPhones() => _getHomeFromUrl(
+      'https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175');
 
   @override
-  Future<List<HomeStoreModel>> getBestSeller() => _getHomeFromUrl('https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175');
+  Future<List<HomeStoreModel>> getBestSeller() => _getHomeFromUrl(
+      'https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175');
 
   @override
-  Future<List<HomeStoreModel>> getHomeStore() => _getHomeFromUrl('https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175');
-   
-  
+  Future<List<HomeStoreModel>> getHomeStore() => _getHomeFromUrl(
+      'https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175');
 
   Future<List<HomeStoreModel>> _getHomeFromUrl(String url) async {
-    final urlHome = Uri.parse(
-        url);
+    final urlHome = Uri.parse(url);
     final response = await client.get(urlHome);
     if (response.statusCode == 200) {
       final homeJson = jsonDecode(response.body);

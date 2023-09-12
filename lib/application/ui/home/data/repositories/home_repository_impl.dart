@@ -7,17 +7,12 @@ import 'package:ecommerce_project/application/ui/home/domain/entities/phone_enti
 import 'package:ecommerce_project/application/ui/home/domain/repositories/home_repository.dart';
 
 import '../../../core/error/exception.dart';
-import '../../../core/platform/network_info.dart';
+
 
 class HomeRepositoryImpl implements HomeRepository {
   final HomeRemoteDataSource homeRemoteDataSource;
-  final NetWorkInfo netWorkInfo;
 
-  HomeRepositoryImpl(
-      {required this.homeRemoteDataSource, required this.netWorkInfo});
-
-  
-    
+  HomeRepositoryImpl({required this.homeRemoteDataSource});
 
   @override
   Future<Either<Failure, List<HomeEntity>>> getHomeStore() async {
@@ -28,16 +23,14 @@ class HomeRepositoryImpl implements HomeRepository {
       return Left(ServerFailure());
     }
   }
-  
+
   @override
   Future<Either<Failure, List<BestSellerEntity>>> getBestSellers() {
     throw UnimplementedError();
   }
-  
+
   @override
   Future<Either<Failure, List<PhoneEntity>>> getPhones() {
     throw UnimplementedError();
   }
-
-
 }
