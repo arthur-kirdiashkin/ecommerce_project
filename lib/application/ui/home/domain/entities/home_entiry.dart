@@ -4,15 +4,15 @@ import 'package:equatable/equatable.dart';
 import '../../data/models/phone_store_model.dart';
 
 class HomeEntity extends Equatable {
-  final List<BestSellerModel>? bestSellers;
-  final List<PhoneModel>? phones;
+  final List<BestSellerModel>? bestSeller;
+  final List<PhoneModel>? homeStore;
 
   HomeEntity({
-    required this.bestSellers,
-    required this.phones,
+    required this.bestSeller,
+    required this.homeStore,
   });
 
   @override
   // TODO: implement props
-  List<Object?> get props => [bestSellers, phones];
+  List<Object?> get props => [bestSeller, homeStore];
 }
