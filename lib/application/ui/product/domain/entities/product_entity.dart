@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class ProductEntity extends Equatable {
-  final String cpu;
+  
   final String camera;
   final List<String> capacity;
   final List<String> color;
@@ -15,7 +15,7 @@ class ProductEntity extends Equatable {
   final String title;
 
   ProductEntity({
-    required this.cpu,
+    
     required this.camera,
     required this.capacity,
     required this.color,
@@ -32,7 +32,7 @@ class ProductEntity extends Equatable {
   @override
   // TODO: implement props
   List<Object?> get props => [
-        cpu,
+        
         camera,
         capacity,
         color,
