@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
 class BasketEntity extends Equatable {
-  final int id;
-  final String images;
-  final int price;
-  final String title;
+  final int? id;
+  final String? images;
+  final int? price;
+  final String? title;
 
   BasketEntity({
     required this.id,

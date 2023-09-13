@@ -4,10 +4,10 @@ import 'package:equatable/equatable.dart';
 import '../../data/models/basket_model.dart';
 
 class CartEntity extends Equatable {
-  final List<BasketModel> basket;
-  final String delivery;
-  final String id;
-  final int total;
+  final List<BasketModel>? basket;
+  final String? delivery;
+  final String? id;
+  final int? total;
 
   CartEntity({
     required this.basket,
