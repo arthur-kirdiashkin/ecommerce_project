@@ -26,15 +26,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         (person) => _homeList.addAll(person),
       );
       _bestSellerList = _homeList
-          .map<List<BestSellerEntity>>(
-            (e) => e.bestSeller!,
-          )
+          .map<List<BestSellerEntity>>((e) => e.bestSeller!)
           .expand((element) => element)
           .toList();
       _phoneList = _homeList
           .map<List<PhoneEntity>>(
-            (e) => e.homeStore!,
-          )
+            (e) => e.homeStore!)
           .expand((element) => element)
           .toList();
       emit(
