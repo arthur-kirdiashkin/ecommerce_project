@@ -1,15 +1,12 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/error/failure.dart';
+import '../../../../core/error/failure.dart';
 import '../../domain/entities/best_seller_entity.dart';
 import '../../domain/entities/home_entiry.dart';
 import '../../domain/entities/phone_entity.dart';
 import '../../domain/usecases/get_all_home_store.dart';
 part 'home_event.dart';
 part 'home_state.dart';
-
-
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final GetAllHomeStore getAllHomeStore;
@@ -28,8 +25,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         (failure) => HomeFailureState(message: _mapFailureToMessage(failure)),
         (person) => _homeList.addAll(person),
       );
-      _bestSellerList = _homeList.map<List<BestSellerEntity>>((e) => e.bestSeller!,).expand((element) => element).toList();
-      _phoneList = _homeList.map<List<PhoneEntity>>((e) => e.homeStore!,).expand((element) => element).toList();
+      _bestSellerList = _homeList
+          .map<List<BestSellerEntity>>(
+            (e) => e.bestSeller!,
+          )
+          .expand((element) => element)
+          .toList();
+      _phoneList = _homeList
+          .map<List<PhoneEntity>>(
+            (e) => e.homeStore!,
+          )
+          .expand((element) => element)
+          .toList();
       emit(
         HomeLoadedState(
           homePhones: _homeList,
@@ -40,7 +47,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
   }
 
-   String _mapFailureToMessage(Failure failure) {
+  String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {
       case ServerFailure:
         return 'Server Failure';
@@ -49,6 +56,3 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 }
-
-
- 
