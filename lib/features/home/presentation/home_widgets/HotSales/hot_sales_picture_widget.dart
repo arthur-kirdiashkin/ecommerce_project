@@ -61,10 +61,13 @@ class HotSalesPhoneWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: ClipRRect(
-            child: PersonCacheImage(
+            borderRadius: BorderRadius.circular(10),
+            child: CachedNetworkImage(
               imageUrl: picture ?? '',
               width: 378,
               height: 182,
+              fit: BoxFit.cover,
+              alignment: Alignment.topLeft,
             ),
           ),
         ),
@@ -142,39 +145,6 @@ class HotSalesPhoneWidget extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class PersonCacheImage extends StatelessWidget {
-  const PersonCacheImage(
-      {super.key, required this.imageUrl, this.width, this.height});
-
-  final String imageUrl;
-  final double? width;
-  final double? height;
-
-  Widget _imageWidget(ImageProvider imageProvider) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(
-            image: imageProvider,
-            fit: BoxFit.cover,
-            alignment: Alignment.topLeft),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: imageUrl,
-      width: width,
-      height: height,
-      imageBuilder: (context, imageProvider) {
-        return _imageWidget(imageProvider);
-      },
     );
   }
 }

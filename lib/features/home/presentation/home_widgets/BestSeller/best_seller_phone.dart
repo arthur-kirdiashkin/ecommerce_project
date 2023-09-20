@@ -92,9 +92,12 @@ class OneBestSellerCardWidget extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          PersonCacheImage(
-            imageUrl: (id! % 2 == 0 ? pictureOne : pictureTwo) ?? '',
-            height: 187,
+          SizedBox(
+            height: 190,
+            child: CachedNetworkImage(
+              fit: BoxFit.fitWidth,
+              imageUrl: (id! % 2 == 0 ? pictureOne : pictureTwo) ?? '',
+            ),
           ),
           Positioned(
             left: 145,
@@ -160,34 +163,4 @@ class OneBestSellerCardWidget extends StatelessWidget {
   }
 }
 
-class PersonCacheImage extends StatelessWidget {
-  const PersonCacheImage(
-      {super.key, required this.imageUrl, this.width, this.height});
 
-  final String imageUrl;
-  final double? width;
-  final double? height;
-
-  Widget _imageWidget(ImageProvider imageProvider) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          image: DecorationImage(
-            image: imageProvider,
-            fit: BoxFit.cover,
-          )),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: imageUrl,
-      width: width,
-      height: height,
-      imageBuilder: (context, imageProvider) {
-        return _imageWidget(imageProvider);
-      },
-    );
-  }
-}
