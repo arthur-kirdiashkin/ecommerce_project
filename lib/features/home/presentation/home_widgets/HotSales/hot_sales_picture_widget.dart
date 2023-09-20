@@ -169,7 +169,7 @@ class PersonCacheImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: imageUrl ?? '',
+      imageUrl: imageUrl,
       width: width,
       height: height,
       imageBuilder: (context, imageProvider) {
