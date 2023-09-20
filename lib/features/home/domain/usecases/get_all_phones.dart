@@ -9,6 +9,7 @@ class GetAllPhones extends UseCase<List<PhoneEntity>, void> {
 
   GetAllPhones(this.phoneRepository);
 
+  @override
   Future<Either<Failure, List<PhoneEntity>>> call({void params}) async {
     return await phoneRepository.getPhones();
   }
