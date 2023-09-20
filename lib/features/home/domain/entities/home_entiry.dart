@@ -1,6 +1,4 @@
-
 import 'package:equatable/equatable.dart';
-
 import '../../data/models/best_seller_store_model.dart';
 import '../../data/models/phone_store_model.dart';
 
