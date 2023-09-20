@@ -1,20 +1,12 @@
-import 'package:ecommerce_project/application/ui/home/presentation/home_widgets/best_seller_example_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import '../../../../../common/themes/app_colors.dart';
+import 'best_seller_phone.dart';
 
-import '../../../themes/app_colors.dart';
-
-class BestSellerWidget extends StatefulWidget {
-  const BestSellerWidget({super.key});
-
-  @override
-  State<BestSellerWidget> createState() => _BestSellerWidgetState();
-}
-
-class _BestSellerWidgetState extends State<BestSellerWidget> {
+class BestSellersWidget extends StatelessWidget {
+  const BestSellersWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Row(
           children: [
@@ -42,14 +34,7 @@ class _BestSellerWidgetState extends State<BestSellerWidget> {
             ),
           ],
         ),
-        // Consumer<BestSellerModelInherited>(
-        //   builder: (context, bestSellerModelInherited, _) {
-        //     final bestSellersOne = context.read<BestSellerModelInherited>().loadBestSellers();
-        //     return const BestSellerProvierWidget();
-        //   },
-          
-        // ),
-        BestSellerProvierWidget()
+        BestSellerPhoneWidget()
       ],
     );
   }

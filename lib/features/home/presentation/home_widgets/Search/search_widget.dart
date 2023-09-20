@@ -1,7 +1,8 @@
-import 'package:ecommerce_project/application/ui/home/presentation/home_widgets/filer_options.dart';
-import 'package:ecommerce_project/application/ui/themes/app_colors.dart';
 import 'package:ecommerce_project/common/svg_icons.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../common/themes/app_colors.dart';
+import '../FilterOptions/filer_options.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key});
@@ -11,12 +12,12 @@ class SearchWidget extends StatelessWidget {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 32),
+          padding: const EdgeInsets.only(left: 32),
           child: SizedBox(
             width: 300,
             height: 34,
             child: TextField(
-              style: TextStyle(fontSize: 13),
+              style: const TextStyle(fontSize: 13),
               cursorHeight: 13,
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
@@ -52,11 +53,11 @@ class SearchWidget extends StatelessWidget {
                     return Theme(
                         data: Theme.of(context)
                             .copyWith(canvasColor: Colors.transparent),
-                        child: FilterOptions());
+                        child: const FilterOptions());
                   });
             },
             style: ElevatedButton.styleFrom(
-                shape: CircleBorder(),
+                shape: const CircleBorder(),
                 backgroundColor: AppColors.selectedColor),
             child: filterOptionsIcon)
       ],

@@ -1,5 +1,6 @@
-import 'package:ecommerce_project/application/ui/themes/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../common/themes/app_colors.dart';
 
 class FilterOptions extends StatelessWidget {
   const FilterOptions({super.key});
@@ -16,7 +17,7 @@ class FilterOptions extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 24,
             ),
             child: Row(
@@ -33,7 +34,7 @@ class FilterOptions extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       backgroundColor: AppColors.buttonBarColor),
                 ),
-                Text(
+                const Text(
                   'Filter Options',
                   style: TextStyle(
                       fontFamily: 'MarkPronormal500',
@@ -43,23 +44,23 @@ class FilterOptions extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Text(
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: Size(80, 37),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      backgroundColor: AppColors.selectedColor),
+                  child: const Text(
                     'Done',
                     style: TextStyle(
                         fontFamily: 'MarkPronormal500',
                         fontSize: 18,
                         fontWeight: FontWeight.w500),
                   ),
-                  style: ElevatedButton.styleFrom(
-                      minimumSize: Size(80, 37),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      backgroundColor: AppColors.selectedColor),
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 28,
           ),
           Padding(
@@ -67,7 +68,7 @@ class FilterOptions extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Brand',
                   style: TextStyle(
                       fontFamily: 'MarkPronormal500',
@@ -75,22 +76,23 @@ class FilterOptions extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       color: AppColors.buttonBarColor),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 7,
                 ),
                 Container(
-                    height: 37,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.symmetric(horizontal: 14),
-                    child: FilterBrandWidget(),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                            color: Color.fromRGBO(220, 220, 220, 1)))),
-                SizedBox(
+                  height: 37,
+                  width: double.maxFinite,
+                  padding: EdgeInsets.symmetric(horizontal: 14),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Color.fromRGBO(220, 220, 220, 1)),
+                  ),
+                  child: const FilterBrandWidget(),
+                ),
+                const SizedBox(
                   height: 12,
                 ),
-                Text(
+                const Text(
                   'Price',
                   style: TextStyle(
                       fontFamily: 'MarkPronormal500',
@@ -98,7 +100,7 @@ class FilterOptions extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       color: AppColors.buttonBarColor),
                 ),
-                  SizedBox(
+                const SizedBox(
                   height: 7,
                 ),
                 Container(
@@ -110,10 +112,10 @@ class FilterOptions extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5),
                         border: Border.all(
                             color: Color.fromRGBO(220, 220, 220, 1)))),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
-                Text(
+                const Text(
                   'Size',
                   style: TextStyle(
                       fontFamily: 'MarkPronormal500',
@@ -121,18 +123,21 @@ class FilterOptions extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       color: AppColors.buttonBarColor),
                 ),
-                  SizedBox(
+                const SizedBox(
                   height: 7,
                 ),
                 Container(
-                    height: 37,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.symmetric(horizontal: 14),
-                    child: FilterSizeWidget(),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                            color: Color.fromRGBO(220, 220, 220, 1)))),
+                  height: 37,
+                  width: double.maxFinite,
+                  padding: EdgeInsets.symmetric(horizontal: 14),
+                  child: FilterSizeWidget(),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(
+                      color: Color.fromRGBO(220, 220, 220, 1),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -155,16 +160,22 @@ class _FilterBrandWidgetState extends State<FilterBrandWidget> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
-      underline: SizedBox.shrink(),
+      underline: const SizedBox.shrink(),
       isExpanded: true,
       dropdownColor: Colors.white,
       value: brandValue,
-      icon: Icon(Icons.keyboard_arrow_down, size: 30, color: AppColors.arrowSizeColor,),
+      icon: const Icon(
+        Icons.keyboard_arrow_down,
+        size: 30,
+        color: AppColors.arrowSizeColor,
+      ),
       elevation: 16,
       onChanged: (String? neWvalue) {
-        setState(() {
-          brandValue = neWvalue!;
-        });
+        setState(
+          () {
+            brandValue = neWvalue!;
+          },
+        );
       },
       items: <String>[
         'Samsung',
@@ -177,7 +188,7 @@ class _FilterBrandWidgetState extends State<FilterBrandWidget> {
             value: value,
             child: Text(
               value,
-              style: TextStyle(
+              style: const TextStyle(
                   color: AppColors.buttonBarColor,
                   fontFamily: 'MarkPronormal400',
                   fontSize: 18,
@@ -207,7 +218,11 @@ class _FilterPriceWidgetState extends State<FilterPriceWidget> {
         isExpanded: true,
         dropdownColor: Colors.white,
         value: brandValue,
-        icon: Icon(Icons.keyboard_arrow_down, size: 30, color: AppColors.arrowSizeColor,),
+        icon: const Icon(
+          Icons.keyboard_arrow_down,
+          size: 30,
+          color: AppColors.arrowSizeColor,
+        ),
         elevation: 16,
         onChanged: (String? neWvalue) {
           setState(() {
@@ -225,7 +240,7 @@ class _FilterPriceWidgetState extends State<FilterPriceWidget> {
               value: value,
               child: Text(
                 value,
-                style: TextStyle(
+                style: const TextStyle(
                     color: AppColors.buttonBarColor,
                     fontFamily: 'MarkPronormal400',
                     fontSize: 18,
@@ -236,7 +251,6 @@ class _FilterPriceWidgetState extends State<FilterPriceWidget> {
         ).toList());
   }
 }
-
 
 class FilterSizeWidget extends StatefulWidget {
   const FilterSizeWidget({super.key});
@@ -251,11 +265,15 @@ class _FilterSizeWidgetState extends State<FilterSizeWidget> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
-        underline: SizedBox.shrink(),
+        underline: const SizedBox.shrink(),
         isExpanded: true,
         dropdownColor: Colors.white,
         value: brandValue,
-        icon: Icon(Icons.keyboard_arrow_down, size: 30, color: AppColors.arrowSizeColor,),
+        icon: const Icon(
+          Icons.keyboard_arrow_down,
+          size: 30,
+          color: AppColors.arrowSizeColor,
+        ),
         elevation: 16,
         onChanged: (String? neWvalue) {
           setState(() {
@@ -273,7 +291,7 @@ class _FilterSizeWidgetState extends State<FilterSizeWidget> {
               value: value,
               child: Text(
                 value,
-                style: TextStyle(
+                style: const TextStyle(
                     color: AppColors.buttonBarColor,
                     fontFamily: 'MarkPronormal400',
                     fontSize: 18,

@@ -1,6 +1,7 @@
-import 'package:ecommerce_project/application/ui/themes/app_colors.dart';
 import 'package:ecommerce_project/common/svg_icons.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../common/themes/app_colors.dart';
 
 class HomeLocationWidget extends StatelessWidget {
   const HomeLocationWidget({super.key});
@@ -13,21 +14,21 @@ class HomeLocationWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           locationIcon,
-          SizedBox(
+          const SizedBox(
             width: 11,
           ),
-          Text(
+          const Text(
             'Zihuatanejo, Gro',
             style: TextStyle(
-              fontFamily: 'MarkPronormal500',
+                fontFamily: 'MarkPronormal500',
                 fontWeight: FontWeight.w800,
                 color: AppColors.buttonBarColor),
           ),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           geoPositionIcon,
-          SizedBox(
+          const SizedBox(
             width: 80,
           ),
           filterIcon

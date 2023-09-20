@@ -1,11 +1,9 @@
-import 'package:ecommerce_project/application/ui/cart/presentation/bloc/cart_bloc.dart';
-import 'package:ecommerce_project/application/ui/cart/presentation/pages/cart_page.dart';
-import 'package:ecommerce_project/application/ui/themes/app_colors.dart';
-import 'package:ecommerce_project/application/ui/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../common/app_custom_icons/custom_bottom_bar_icons.dart';
+import '../../../../../../common/app_custom_icons/custom_bottom_bar_icons.dart';
+import '../../../../cart/presentation/pages/cart_page.dart';
+import '../../../../../common/themes/app_colors.dart';
+import '../../pages/home_page.dart';
 
 class HomeBottomBarWidget extends StatefulWidget {
   const HomeBottomBarWidget({super.key});
@@ -16,21 +14,21 @@ class HomeBottomBarWidget extends StatefulWidget {
 
 class _HomeBottomBarWidgetState extends State<HomeBottomBarWidget> {
   int _selectedIndex = 0;
-  List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
-    Center(
+  final List<Widget> _widgetOptions = <Widget>[
+    const HomePage(),
+    const Center(
       child: Text(
-        'Index 1: Basket',
+        'Basket',
         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
     ),
-    Center(
+    const Center(
       child: Text(
         'Favourites',
         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
     ),
-    Center(
+    const Center(
       child: Text(
         'Settings',
         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -44,7 +42,7 @@ class _HomeBottomBarWidgetState extends State<HomeBottomBarWidget> {
         _selectedIndex = index;
       } else {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Cartpage()));
+            context, MaterialPageRoute(builder: (context) => const Cartpage()));
       }
     });
   }
@@ -71,10 +69,10 @@ class _HomeBottomBarWidgetState extends State<HomeBottomBarWidget> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       ellipseIcon,
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
-                      Text(
+                      const Text(
                         'Explorer',
                         style: TextStyle(
                           color: Colors.white,
@@ -86,9 +84,9 @@ class _HomeBottomBarWidgetState extends State<HomeBottomBarWidget> {
                   label: ''),
               BottomNavigationBarItem(
                 icon: Badge(
-                  child: basketIcon,
                   label: Text('2'),
                   alignment: Alignment(8, -4),
+                  child: basketIcon,
                 ),
                 label: '',
               ),

@@ -1,8 +1,7 @@
-import 'package:ecommerce_project/application/ui/themes/app_colors.dart';
 import 'package:ecommerce_project/common/svg_icons.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../../common/themes/app_colors.dart';
 
 class CategoryIcon {
   String label;
@@ -80,14 +79,14 @@ class _SelectCategoryIconsWidgetState extends State<SelectCategoryIconsWidget> {
     return SizedBox(
       height: 100,
       child: ListView.builder(
-        // shrinkWrap: true,
-        padding: EdgeInsets.only(left: 27),
+        shrinkWrap: true,
+        padding: const EdgeInsets.only(left: 27),
         scrollDirection: Axis.horizontal,
         itemCount: categoryIcons.length,
         itemBuilder: (context, index) {
           final icons = categoryIcons[index];
           return Padding(
-            padding: EdgeInsets.only(right: 23),
+            padding: const EdgeInsets.only(right: 23),
             child: Column(
               children: [
                 Container(
@@ -100,24 +99,24 @@ class _SelectCategoryIconsWidgetState extends State<SelectCategoryIconsWidget> {
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.3),
                             blurRadius: 0,
-                            offset: Offset(2, 2),
+                            offset: const Offset(2, 2),
                           )
                         ]),
                     child: ElevatedButton(
-                      style: ButtonStyle(
+                      style: ElevatedButton.styleFrom(
                           backgroundColor: _selectedIndex == index
-                              ? const MaterialStatePropertyAll(
-                                  AppColors.selectedColor)
-                              : const MaterialStatePropertyAll(Colors.white),
-                          shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(60)))),
+                              ? AppColors.selectedColor
+                              : Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(60))),
                       onPressed: () => _onItemTappedIcon(index),
                       child: SvgPicture.asset(
                         icons.iconPath,
-                        color: _selectedIndex == index
-                            ? Colors.white
-                            : AppColors.selectCategoryDefalutColor,
+                        colorFilter: ColorFilter.mode(
+                            _selectedIndex == index
+                                ? Colors.white
+                                : AppColors.selectCategoryDefalutColor,
+                            BlendMode.srcIn),
                       ),
                     )),
                 const SizedBox(
