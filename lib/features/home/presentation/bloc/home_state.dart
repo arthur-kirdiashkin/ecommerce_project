@@ -16,7 +16,7 @@ class HomeLoadedState extends HomeState {
   final List<BestSellerEntity> bestSellers;
   final List<PhoneEntity> phones;
 
-  HomeLoadedState({
+  const HomeLoadedState({
     required this.homePhones,
     required this.bestSellers,
     required this.phones,
@@ -33,7 +33,7 @@ class HomeLoadedState extends HomeState {
 class HomeFailureState extends HomeState {
   final String message;
 
-  HomeFailureState({required this.message});
+  const HomeFailureState({required this.message});
 
   @override
   List<Object?> get props => [message];
