@@ -13,7 +13,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc({
     required this.getAllHomeStore,
   }) : super(HomeInitialState()) {
-    on<LoadHomeEvent>((event, emit) async {
+    on<HomeLoadEvent>((event, emit) async {
       emit(HomeLoadingState());
 
       List<HomeEntity> _homeList = [];
