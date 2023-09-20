@@ -1,4 +1,3 @@
-
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'features/cart/data/datasources/cart_remote_data_source.dart';
@@ -17,9 +16,6 @@ import 'features/product/domain/repositories/product_repository.dart';
 import 'features/product/domain/usecases/get_all_products.dart';
 import 'features/product/presentation/bloc/product_bloc.dart';
 
-
-
-
 final sl = GetIt.instance;
 
 Future<void> init() async {
@@ -34,14 +30,20 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetAllCarts(sl()));
 
 // Repository
-sl.registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl(homeRemoteDataSource: sl()));
-sl.registerLazySingleton<ProductRepository>(() => ProductRepositoryImpl(productRemoteDataSource: sl()));
-sl.registerLazySingleton<CartRepository>(() => CartRepositoryImpl( cartRemoteDataSource: sl()));
+  sl.registerLazySingleton<HomeRepository>(
+      () => HomeRepositoryImpl(homeRemoteDataSource: sl()));
+  sl.registerLazySingleton<ProductRepository>(
+      () => ProductRepositoryImpl(productRemoteDataSource: sl()));
+  sl.registerLazySingleton<CartRepository>(
+      () => CartRepositoryImpl(cartRemoteDataSource: sl()));
 
-sl.registerLazySingleton<HomeRemoteDataSource>(() => HomeRemoteDataSourceImpl(client: sl()));
-sl.registerLazySingleton<ProductRemoteDataSource>(() => ProductRemoteDataSourceImpl(client: sl()));
-sl.registerLazySingleton<CartRemoteDataSource>(() => CartRemoteDataSourceImpl(client: sl()));
+  sl.registerLazySingleton<HomeRemoteDataSource>(
+      () => HomeRemoteDataSourceImpl(client: sl()));
+  sl.registerLazySingleton<ProductRemoteDataSource>(
+      () => ProductRemoteDataSourceImpl(client: sl()));
+  sl.registerLazySingleton<CartRemoteDataSource>(
+      () => CartRemoteDataSourceImpl(client: sl()));
 
 // External
-sl.registerLazySingleton(() => http.Client());
+  sl.registerLazySingleton(() => http.Client());
 }
