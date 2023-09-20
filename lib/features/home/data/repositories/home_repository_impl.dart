@@ -1,8 +1,6 @@
 import 'package:dartz/dartz.dart';
-
-
-import '../../../core/error/exception.dart';
-import '../../../core/error/failure.dart';
+import '../../../../core/error/exception.dart';
+import '../../../../core/error/failure.dart';
 import '../../domain/entities/best_seller_entity.dart';
 import '../../domain/entities/home_entiry.dart';
 import '../../domain/entities/phone_entity.dart';
