@@ -33,6 +33,10 @@ class HotSalesPictureWidget extends StatelessWidget {
                   isBuy: phonesList[index].isBuy);
             },
           );
+        } else if (state is HomeFailureState) {
+          return const Center(
+            child: Text('Error HotSales'),
+          );
         }
         return const SizedBox.shrink();
       },

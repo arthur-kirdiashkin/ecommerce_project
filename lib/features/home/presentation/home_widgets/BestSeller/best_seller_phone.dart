@@ -57,6 +57,10 @@ class BestSellerPhoneWidget extends StatelessWidget {
               },
             ),
           );
+        } else if (state is HomeFailureState) {
+          return const Center(
+            child: Text('Error BestSellers'),
+          );
         }
         return const SizedBox.shrink();
       },
@@ -162,5 +166,3 @@ class OneBestSellerCardWidget extends StatelessWidget {
     );
   }
 }
-
-
