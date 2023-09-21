@@ -35,7 +35,7 @@ class HotSalesPictureWidget extends StatelessWidget {
           );
         } else if (state is HomeFailureState) {
           return const Center(
-            child: Text('Error HotSales'),
+            child: Text('Error getting HotSales'),
           );
         }
         return const SizedBox.shrink();

@@ -59,7 +59,7 @@ class BestSellerPhoneWidget extends StatelessWidget {
           );
         } else if (state is HomeFailureState) {
           return const Center(
-            child: Text('Error BestSellers'),
+            child: Text('Error getting BestSellers'),
           );
         }
         return const SizedBox.shrink();

@@ -136,10 +136,10 @@ class CartProductWidget extends StatelessWidget {
                 ],
               ));
         } else if (state is CartErrorState) {
-          return Center(
+          return const Center(
             child: Text(
-              state.message,
-              style: const TextStyle(
+              'Error getting cart',
+              style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.w600,
                 color: Colors.red,
