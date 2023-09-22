@@ -30,6 +30,7 @@ class ProductCharacteristicsWidget extends StatelessWidget {
               return RatingProductWidget(
                 title: '${productDetails.title}',
                 rating: productDetails.rating,
+                isFavorites: productDetails.isFavorites,
               );
             },
           );
@@ -49,9 +50,11 @@ class RatingProductWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.rating,
+    required this.isFavorites,
   });
   final String? title;
   final double? rating;
+  final bool? isFavorites;
 
   @override
   Widget build(BuildContext context) {
@@ -72,11 +75,13 @@ class RatingProductWidget extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.all(10),
-                    minimumSize: Size(37, 37),
+                    minimumSize: const Size(37, 37),
                     backgroundColor: AppColors.buttonBarColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
-                child: vectorHeartIcon),
+                child: isFavorites == true
+                    ? productFavouriteIcon
+                    : productNotFavouriteIcon),
           ],
         ),
         Padding(
