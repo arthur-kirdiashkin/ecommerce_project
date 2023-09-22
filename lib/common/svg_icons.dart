@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -27,10 +26,19 @@ const String searchPath = 'assets/search.svg';
 final Widget searchIcon = SvgPicture.asset(searchPath);
 
 const String filterOptionsPath = 'assets/filter_options.svg';
-final Widget filterOptionsIcon = SvgPicture.asset(filterOptionsPath, width: 14.78, height: 14.78,);
+final Widget filterOptionsIcon = SvgPicture.asset(
+  filterOptionsPath,
+  width: 14.78,
+  height: 14.78,
+);
 
 const String bestSellerFavouritePath = 'assets/best_seller_favourite.svg';
-final Widget bestSellerFavouriteIcon = SvgPicture.asset(bestSellerFavouritePath);
+final Widget bestSellerFavouriteIcon =
+    SvgPicture.asset(bestSellerFavouritePath);
+
+const String productFavouritePath = 'assets/best_seller_favourite.svg';
+final Widget productFavouriteIcon =
+    SvgPicture.asset(bestSellerFavouritePath, width: 14, height: 13,);    
 
 const String productBasketPath = 'assets/product_basket.svg';
 final Widget productBasketIcon = SvgPicture.asset(productBasketPath);
@@ -38,17 +46,27 @@ final Widget productBasketIcon = SvgPicture.asset(productBasketPath);
 const String productArrowPath = 'assets/product_arrow_left.svg';
 final Widget productArrowIcon = SvgPicture.asset(productArrowPath);
 
-const String bestSellerNotFavouritePath = 'assets/best_seller_not_favourite.svg';
-final Widget bestSellerNotFavouriteIcon = SvgPicture.asset(bestSellerNotFavouritePath);
+const String bestSellerNotFavouritePath =
+    'assets/best_seller_not_favourite.svg';
+final Widget bestSellerNotFavouriteIcon =
+    SvgPicture.asset(bestSellerNotFavouritePath);
+
+const String productNotFavouritePath =
+    'assets/best_seller_not_favourite.svg';
+final Widget productNotFavouriteIcon =
+    SvgPicture.asset(bestSellerNotFavouritePath, width: 14, height: 13,);    
 
 const String groupCharacteristicsPath = 'assets/group18.svg';
-final Widget groupCharacteristicsIcon = SvgPicture.asset(groupCharacteristicsPath);
+final Widget groupCharacteristicsIcon =
+    SvgPicture.asset(groupCharacteristicsPath);
 
 const String vectorPath = 'assets/vector.svg';
 final Widget vectorIcon = SvgPicture.asset(vectorPath);
 
 const String vectorHeartPath = 'assets/vector_heart.svg';
-final Widget vectorHeartIcon = SvgPicture.asset(vectorHeartPath);
+final Widget vectorHeartIcon = SvgPicture.asset(
+  vectorHeartPath,
+);
 
 const String vectorAddressPath = 'assets/address_vector.svg';
 final Widget vectorAddressIcon = SvgPicture.asset(vectorAddressPath);
