@@ -1,5 +1,5 @@
-import 'package:ecommerce_project/application/ui/product/domain/entities/product_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
+import '../../domain/entities/product_entity.dart';
 part 'product_store_model.g.dart';
 
 @JsonSerializable()
