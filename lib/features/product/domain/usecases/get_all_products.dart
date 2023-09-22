@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:ecommerce_project/application/ui/core/error/failure.dart';
-import 'package:ecommerce_project/application/ui/core/usecases/usecase.dart';
-import 'package:ecommerce_project/application/ui/product/domain/entities/product_entity.dart';
-import 'package:ecommerce_project/application/ui/product/domain/repositories/product_repository.dart';
+import '../../../../core/error/failure.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../entities/product_entity.dart';
+import '../repositories/product_repository.dart';
+
 
 class GetAllProducts extends UseCase<List<ProductEntity>, void> {
   final ProductRepository productRepository;
