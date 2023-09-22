@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../common/app_custom_icons/custom_bottom_bar_icons.dart';
+import '../../../../cart/domain/entities/cart_entity.dart';
+import '../../../../cart/presentation/bloc/cart_bloc.dart';
+import '../../../../cart/presentation/bloc/cart_state.dart';
 import '../../../../cart/presentation/pages/cart_page.dart';
 import '../../../../../common/themes/app_colors.dart';
 import '../../pages/home_page.dart';
@@ -82,12 +86,8 @@ class _HomeBottomBarWidgetState extends State<HomeBottomBarWidget> {
                     ],
                   ),
                   label: ''),
-              BottomNavigationBarItem(
-                icon: Badge(
-                  label: Text('2'),
-                  alignment: Alignment(8, -4),
-                  child: basketIcon,
-                ),
+              const BottomNavigationBarItem(
+                icon: QuantityCart(),
                 label: '',
               ),
               BottomNavigationBarItem(
@@ -104,6 +104,29 @@ class _HomeBottomBarWidgetState extends State<HomeBottomBarWidget> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class QuantityCart extends StatelessWidget {
+  const QuantityCart({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CartBloc, CartState>(
+      builder: (context, state) {
+        List<CartEntity> cartList = [];
+        if (state is CartLoadedState) {
+          cartList = state.cartProducts;
+          return Badge(
+            backgroundColor: AppColors.selectedColor,
+            label: Text('${cartList[0].basket!.length}'),
+            alignment: const Alignment(8, -4),
+            child: basketIcon,
+          );
+        }
+        return const SizedBox.shrink();
+      },
     );
   }
 }
