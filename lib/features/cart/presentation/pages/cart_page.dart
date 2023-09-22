@@ -3,14 +3,9 @@ import '../../../../common/themes/app_colors.dart';
 import '../cart_widgets/AddAdress/add_adress.dart';
 import '../cart_widgets/CartProduct/cart_product.dart';
 
-class Cartpage extends StatefulWidget {
+class Cartpage extends StatelessWidget {
   const Cartpage({super.key});
 
-  @override
-  State<Cartpage> createState() => _CartpageState();
-}
-
-class _CartpageState extends State<Cartpage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
