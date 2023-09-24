@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce_project/locator_service.dart' as di;
+import 'core/blocs/bloc_observer.dart';
 import 'features/cart/presentation/bloc/cart_bloc.dart';
 import 'features/cart/presentation/bloc/cart_event.dart';
 import 'features/home/presentation/bloc/home_bloc.dart';
@@ -13,6 +14,7 @@ import 'locator_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
