@@ -21,13 +21,14 @@ class ProductDetailsPhoneWidget extends StatelessWidget {
           return CarouselSlider.builder(
             itemCount: products[0].images!.length,
             options: CarouselOptions(
-                height: 300,
-                scrollDirection: Axis.horizontal,
-                viewportFraction: 0.7,
-                initialPage: 0,
-                enlargeCenterPage: true),
+              height: 300,
+              scrollDirection: Axis.horizontal,
+              viewportFraction: 0.7,
+              initialPage: 0,
+              enlargeCenterPage: true,
+            ),
             itemBuilder: (context, index, _) {
-              return PhoneCarouselSlider(images: products[0].images![0]);
+              return PhoneCarouselSlider(images: products[0].images![index]);
             },
           );
         } else if (state is ProductFailureState) {
