@@ -165,7 +165,7 @@ class _SelectPropertiesWidgetState extends State<SelectPropertiesWidget> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Add to Cart',
                         style: TextStyle(
                             fontFamily: 'MarkPronormal700',
@@ -174,7 +174,7 @@ class _SelectPropertiesWidgetState extends State<SelectPropertiesWidget> {
                       ),
                       Text(
                         '\$${products[0].price}.00',
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontFamily: 'MarkPronormal700',
                             fontSize: 20,
                             fontWeight: FontWeight.w700),
