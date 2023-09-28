@@ -18,7 +18,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
         final _failureOrCart = await getAllCarts.call();
         _failureOrCart.fold(
-          (failure) => CartErrorState(message: 'Error'),
+          (failure) => const CartErrorState(message: 'Error'),
           (cart) => _cartList.addAll(cart),
         );
         _basketList = _cartList

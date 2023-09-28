@@ -1,12 +1,13 @@
 import 'package:equatable/equatable.dart';
 
 abstract class CartEvent extends Equatable {
+  const CartEvent();
 
 }
 
 class CartLoadEvent extends CartEvent {
 
-  CartLoadEvent();
+  const CartLoadEvent();
 
   @override
   // TODO: implement props
