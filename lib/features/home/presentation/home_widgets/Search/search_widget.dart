@@ -32,7 +32,7 @@ class SearchWidget extends StatelessWidget {
                     color: AppColors.selectedColor,
                   ),
                   enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: const BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(50)),
                   focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white)),

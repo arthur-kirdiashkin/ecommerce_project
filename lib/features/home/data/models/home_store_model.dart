@@ -6,7 +6,7 @@ part 'home_store_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class HomeStoreModel extends HomeEntity {
-  HomeStoreModel({
+  const HomeStoreModel({
     required super.bestSeller,
     required super.homeStore,
   });

@@ -87,8 +87,8 @@ class HotSalesPhoneWidget extends StatelessWidget {
                     ? ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.selectedColor,
-                            shape: CircleBorder(),
-                            minimumSize: Size(27, 27)),
+                            shape: const CircleBorder(),
+                            minimumSize: const Size(27, 27)),
                         onPressed: () {},
                         child: const Text(
                           'New',

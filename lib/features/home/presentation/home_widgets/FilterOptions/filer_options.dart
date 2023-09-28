@@ -25,14 +25,14 @@ class FilterOptions extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Icon(Icons.close, size: 18),
                   style: ElevatedButton.styleFrom(
                       minimumSize: Size(27, 27),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       backgroundColor: AppColors.buttonBarColor),
+                  child: const Icon(Icons.close, size: 18),
                 ),
                 const Text(
                   'Filter Options',
@@ -45,7 +45,7 @@ class FilterOptions extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () => Navigator.pop(context),
                   style: ElevatedButton.styleFrom(
-                      minimumSize: Size(80, 37),
+                      minimumSize: const Size(80, 37),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       backgroundColor: AppColors.selectedColor),
@@ -82,10 +82,11 @@ class FilterOptions extends StatelessWidget {
                 Container(
                   height: 37,
                   width: double.maxFinite,
-                  padding: EdgeInsets.symmetric(horizontal: 14),
+                  padding: const EdgeInsets.symmetric(horizontal: 14),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    border: Border.all(color: Color.fromRGBO(220, 220, 220, 1)),
+                    border: Border.all(
+                        color: const Color.fromRGBO(220, 220, 220, 1)),
                   ),
                   child: const FilterBrandWidget(),
                 ),
@@ -106,12 +107,12 @@ class FilterOptions extends StatelessWidget {
                 Container(
                     height: 37,
                     width: double.maxFinite,
-                    padding: EdgeInsets.symmetric(horizontal: 14),
-                    child: FilterPriceWidget(),
+                    padding: const EdgeInsets.symmetric(horizontal: 14),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         border: Border.all(
-                            color: Color.fromRGBO(220, 220, 220, 1)))),
+                            color: const Color.fromRGBO(220, 220, 220, 1))),
+                    child: const FilterPriceWidget()),
                 const SizedBox(
                   height: 12,
                 ),
@@ -129,14 +130,14 @@ class FilterOptions extends StatelessWidget {
                 Container(
                   height: 37,
                   width: double.maxFinite,
-                  padding: EdgeInsets.symmetric(horizontal: 14),
-                  child: FilterSizeWidget(),
+                  padding: const EdgeInsets.symmetric(horizontal: 14),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       color: Color.fromRGBO(220, 220, 220, 1),
                     ),
                   ),
+                  child: const FilterSizeWidget(),
                 ),
               ],
             ),
@@ -214,7 +215,7 @@ class _FilterPriceWidgetState extends State<FilterPriceWidget> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
-        underline: SizedBox.shrink(),
+        underline: const SizedBox.shrink(),
         isExpanded: true,
         dropdownColor: Colors.white,
         value: brandValue,

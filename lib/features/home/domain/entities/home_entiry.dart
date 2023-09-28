@@ -6,7 +6,7 @@ class HomeEntity extends Equatable {
   final List<BestSellerModel>? bestSeller;
   final List<PhoneModel>? homeStore;
 
-  HomeEntity({
+  const HomeEntity({
     required this.bestSeller,
     required this.homeStore,
   });
