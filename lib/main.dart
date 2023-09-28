@@ -26,11 +26,11 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<CartBloc>(
-            create: (context) => sl<CartBloc>()..add(CartLoadEvent())),
+            create: (context) => sl<CartBloc>()..add(const CartLoadEvent())),
         BlocProvider<ProductBloc>(
-          create: (context) => sl<ProductBloc>()..add(ProductLoadEvent())),
+          create: (context) => sl<ProductBloc>()..add(const ProductLoadEvent())),
         BlocProvider<HomeBloc>(
-          create: (context) => sl<HomeBloc>()..add(HomeLoadEvent())),
+          create: (context) => sl<HomeBloc>()..add(const HomeLoadEvent())),
       ],
       child: MaterialApp(
         theme: AppTheme.light,
