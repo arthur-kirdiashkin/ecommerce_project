@@ -1,16 +1,17 @@
 # ecommerce_project
 
-A new Flutter project.
+This  project was written according to the technical specifications and figma layout
 
-## Getting Started
+## The technologies that have been used:
 
-This project is a starting point for a Flutter application.
+  - Dart
+  - Flutter
+  - Clean Architecture (Domain, Data and Presentation layers)
+  - Dependency Injection, GetIt
+  - http
+  - JSON
+  - Equtable
+  - Bloc
 
-A few resources to get you started if this is your first Flutter project:
+## Work video:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
