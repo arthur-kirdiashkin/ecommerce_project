@@ -1,8 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-
-
-abstract class ProductEvent extends Equatable{}
+abstract class ProductEvent extends Equatable {}
 
 class ProductLoadEvent extends ProductEvent {
   @override

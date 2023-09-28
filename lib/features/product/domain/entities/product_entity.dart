@@ -14,7 +14,7 @@ class ProductEntity extends Equatable {
   final String? ssd;
   final String? title;
 
-  ProductEntity({
+  const ProductEntity({
     required this.cpu,
     required this.camera,
     required this.capacity,

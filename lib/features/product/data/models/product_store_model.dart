@@ -6,7 +6,7 @@ part 'product_store_model.g.dart';
 class ProductModel extends ProductEntity {
   @JsonKey(name: 'CPU')
   final String? cpu;
-  ProductModel({
+  const ProductModel({
     this.cpu,
     required camera,
     required List<String>? capacity,
