@@ -10,7 +10,7 @@ part 'cart_model.g.dart';
 
 
 class CartModel extends CartEntity {
-  CartModel({
+  const CartModel({
     required super.basket,
     required super.delivery,
     required super.id,

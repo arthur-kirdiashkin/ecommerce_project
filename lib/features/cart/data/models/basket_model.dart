@@ -8,7 +8,7 @@ part 'basket_model.g.dart';
 
 @JsonSerializable()
 class BasketModel extends BasketEntity {
-  BasketModel({
+  const BasketModel({
     required super.id,
     required super.images,
     required super.price,
