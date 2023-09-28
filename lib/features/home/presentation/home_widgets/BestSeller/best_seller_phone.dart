@@ -12,9 +12,6 @@ class BestSellerPhoneWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    final double itemHeight = (size.height - kToolbarHeight - 300) / 2.3;
-    final double itemWidth = size.width / 2.2;
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         List<BestSellerEntity> bestSellers = [];
@@ -29,9 +26,9 @@ class BestSellerPhoneWidget extends StatelessWidget {
             removeTop: true,
             child: GridView.builder(
               itemCount: bestSellers.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: (itemWidth / itemHeight),
+                childAspectRatio: (1 / 1.24),
               ),
               physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
@@ -103,8 +100,8 @@ class OneBestSellerCardWidget extends StatelessWidget {
               imageUrl: (id! % 2 == 0 ? pictureOne : pictureTwo) ?? '',
             ),
           ),
-          Positioned(
-            left: 145,
+          Padding(
+            padding: const EdgeInsets.only(left: 140),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   minimumSize: const Size(25, 25),
@@ -117,48 +114,51 @@ class OneBestSellerCardWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 21,
-            top: 190,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      '\$$priceWithoutDiscount',
-                      style: const TextStyle(
-                          fontFamily: 'MarkProbold',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w800,
-                          color: AppColors.buttonBarColor),
-                    ),
-                    const SizedBox(
-                      width: 7,
-                    ),
-                    Text(
-                      '\$$discountPrice',
-                      style: const TextStyle(
-                          fontFamily: 'MarkPronormal500',
-                          fontSize: 11,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.discountPriceColor,
-                          decoration: TextDecoration.lineThrough),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  '$title',
-                  style: const TextStyle(
-                    fontFamily: 'MarkPronormal400',
-                    fontSize: 11,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.buttonBarColor,
+            bottom: 14,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        '\$$priceWithoutDiscount',
+                        style: const TextStyle(
+                            fontFamily: 'MarkProbold',
+                            fontSize: 16,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.buttonBarColor),
+                      ),
+                      const SizedBox(
+                        width: 7,
+                      ),
+                      Text(
+                        '\$$discountPrice',
+                        style: const TextStyle(
+                            fontFamily: 'MarkPronormal500',
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.discountPriceColor,
+                            decoration: TextDecoration.lineThrough),
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    '$title',
+                    style: const TextStyle(
+                      fontFamily: 'MarkPronormal400',
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.buttonBarColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
