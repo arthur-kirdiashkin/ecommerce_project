@@ -9,7 +9,7 @@ class CartEntity extends Equatable {
   final String? id;
   final int? total;
 
-  CartEntity({
+  const CartEntity({
     required this.basket,
     required this.delivery,
     required this.id,

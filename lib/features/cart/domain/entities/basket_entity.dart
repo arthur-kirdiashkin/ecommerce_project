@@ -6,7 +6,7 @@ class BasketEntity extends Equatable {
   final int? price;
   final String? title;
 
-  BasketEntity({
+  const BasketEntity({
     required this.id,
     required this.images,
     required this.price,
