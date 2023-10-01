@@ -15,3 +15,4 @@ This  project was written according to the technical specifications and figma la
 
 ## Work video:
 
+https://youtube.com/shorts/sP9zzSpN0BQ
